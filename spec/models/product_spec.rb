@@ -24,5 +24,8 @@ describe Product do
   it "should not save to the database given invalid attributes" do
     product = Product.create(@invalid_attributes)
     product.valid?.should be_false
+    product.errors.on(:title).should_not be_nil
+    product.errors.on(:price).should_not be_nil
+    product.errors.on(:image_url).should_not be_nil
   end
 end
