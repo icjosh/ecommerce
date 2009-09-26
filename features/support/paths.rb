@@ -10,6 +10,8 @@ module NavigationHelpers
     
     when /the homepage/
       '/'
+    when /the list of products/
+      products_path
     
     # Add more mappings here.
     # Here is a more fancy example:

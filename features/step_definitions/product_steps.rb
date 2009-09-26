@@ -1,8 +1,7 @@
 Given /^I have products titled (.+)$/ do |titles|
   titles.split(', ').each do |title|
-    Product.create!(:name => title, :price => 1, :description => "dummy",
-                    :image_url => "dummy.jpg",
-                    :product_type_id => ProductTypes.find_by_name("Book"))
+    Product.create!(:title => title, :price => 1,
+                    :description => "dummy", :image_url => "dummy.jpg")
   end
 end
 
