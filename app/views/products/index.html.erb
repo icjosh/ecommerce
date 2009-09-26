@@ -1,25 +1,33 @@
-<h1>Listing products</h1>
+<div id="product-list">
+  <h1>Listing products</h1>
+  
+  <table cellpadding="5" cellspacing="0">
+    
+    <% @products.each do |product| %>
+      <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+      	<td>
+          <img class="list-image" src="<%= product.image_url %>"/>
+        </td>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Price</th>
-    <th>Description</th>
-    <th>Image url</th>
-  </tr>
+        <td class="item-price">
+          <%=h number_to_currency(product.price) %>
+        </td>
 
-<% @products.each do |product| %>
-  <tr>
-    <td><%=h product.title %></td>
-    <td><%=h number_to_currency(product.price) %></td>
-    <td><%=h product.description %></td>
-    <td><%=h product.image_url %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+        <td width="60%">
+          <span class="list-title"><%=h product.title %></span><br />
+          <%=h truncate(product.description, 80) %>
+        </td>
+
+        <td class="list-actions">
+          <%= link_to 'Show', product %><br />
+          <%= link_to 'Edit', edit_product_path(product) %><br />
+          <%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %><br />
+        </td>
+      </tr>
+    <% end %>
+
+  </table>
+</div>
 
 <br />
 
