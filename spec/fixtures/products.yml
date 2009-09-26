@@ -11,3 +11,15 @@ two:
   price: 9.99
   description: MyText
   image_url: MyString
+
+harry_book:
+  title: Harry Potter and the Sorcerers Stone
+  price: 50.50
+  description: The first book of the Harry Potter series
+  image_url: harry_potter1.jpg
+
+the_lord_of_the_rings:
+  title: The Lord of The Rings: The Two Towers
+  price: 50.50
+  description: The second book of The Lord of the Rings series
+  image_url: lor_2.png
