@@ -19,4 +19,5 @@ class Cart
   def remove_from_cart(product)
     @items.delete_if { |item| item.product == product }
   end
+
 end

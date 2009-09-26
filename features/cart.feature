@@ -17,3 +17,8 @@ Feature: Manage Cart
     And I should have 1 item in Cart
     And I should have "The Lord of the Rings" in Cart
 
+  Scenario: Empty Cart
+    When I press "Add to Cart"
+    And I press "Empty Cart"
+    Then I should see "Your Cart is currently empty"
+    And I should have 0 items in Cart

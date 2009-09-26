@@ -16,6 +16,12 @@ class StoreController < ApplicationController
     end
   end
 
+  def empty_cart
+    session[:cart].items.clear
+    flash[:notice] = "Your Cart is currently empty"
+    redirect_to :action => :index
+  end
+  
   private
   def find_cart
     session[:cart] ||= Cart.new
