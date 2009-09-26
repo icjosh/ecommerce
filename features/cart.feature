@@ -5,14 +5,14 @@ Feature: Manage Cart
   I want to have a cart for storing products
 
   Background:
-    Given I have products titled The Lord of the Rings, Harry Potter
+    Given I have product titled The Lord of the Rings
+    And I am on the store page
 
   Scenario: Hide empty Cart
-    Given I am on the list of products
     Then I should not see "Cart"
 
   Scenario: Add product to Cart
-    Given I am on the list of products
-    And I go to the "Harry Potter" product
-    And I press "Add to Cart"
-    Then I should have 1 product in Cart
+    When I press "Add to Cart"
+    Then I should see "Cart"
+    And I should have 1 product in Cart
+    And I should have "The Lord of the Rings" in Cart

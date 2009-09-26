@@ -14,6 +14,8 @@ module NavigationHelpers
       products_path
     when /the (.+) product/
       products_path(Product.find_by_title($1))
+    when /the store page/
+      store_path
     
     # Add more mappings here.
     # Here is a more fancy example:
