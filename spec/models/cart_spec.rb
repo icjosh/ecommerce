@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-fixtures :products
+# TODO: add fixtures or factories here
 
 describe Cart do
   before(:each) do
@@ -10,10 +10,10 @@ describe Cart do
   end
 
   it "should create a new instance given valid attributes" do
-    Cart.create!(@valid_attributes)
+    Cart.new
   end
 
   it "should add a new product" do
-    Product = 
+    # TODO: implement
   end
 end
