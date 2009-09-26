@@ -40,7 +40,7 @@ div.completions_popup ul {
     cursor: pointer;
 }
 
-#notice {
+#flash_notice {
     border: 2px solid red;
     padding: 1em;
     margin-bottom: 2em;
@@ -105,7 +105,7 @@ div.completions_popup ul {
     float: left;
     padding-top: 1em;
     padding-left: 1em;
-    padding-bottom: 1em;
+    padding-bottom: 40%;
     width: 14em;
     background: #141;
 }
