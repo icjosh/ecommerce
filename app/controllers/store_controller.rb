@@ -13,7 +13,6 @@ class StoreController < ApplicationController
     else
       @cart = find_cart
       @cart.add_product(product)
-      redirect_to_index
     end
   end
 
@@ -21,7 +20,7 @@ class StoreController < ApplicationController
     session[:cart].items.clear
     redirect_to_index "Your Cart is currently empty"
   end
-  
+
   private
   def find_cart
     session[:cart] ||= Cart.new
@@ -29,7 +28,6 @@ class StoreController < ApplicationController
 
   def redirect_to_index(msg = nil)
     flash[:notice] = msg if msg
-    redirect_to :action => index
+    redirect_to :action => :index
   end
-
 end
