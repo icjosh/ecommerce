@@ -12,6 +12,8 @@ module NavigationHelpers
       '/'
     when /the list of products/
       products_path
+    when /the (.+) product/
+      products_path(Product.find_by_title($1))
     
     # Add more mappings here.
     # Here is a more fancy example:

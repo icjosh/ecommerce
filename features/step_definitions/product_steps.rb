@@ -1,4 +1,4 @@
-Given /^I have products titled (.+)$/ do |titles|
+Given /^I have products? titled (.+)$/ do |titles|
   titles.split(', ').each do |title|
     Product.create!(:title => title, :price => 1,
                     :description => "dummy", :image_url => "dummy.jpg")

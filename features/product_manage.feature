@@ -30,3 +30,13 @@ Feature: Manage Products
       | Nokia Phone       | -75.25  | nokia.jpg    | not see "Product was succesfully created"    |
       | Harry Potter Book | 25.25   | potter.doc   | not see "Product was succesfully created."   |
       
+
+  Scenario: Edit Product
+    Given I have product titled The Lord of the Rings
+    And I am on the "The Lord of the Rings" product
+    When I follow "Edit"
+    And I fill in "Price" with "25.00"
+    And I press "Update"
+    Then I should see "Product was successfully updated."
+    And I should see "The Lord of the Rings"
+    And I should see "25.00"
