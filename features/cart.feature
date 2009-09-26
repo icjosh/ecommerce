@@ -14,5 +14,6 @@ Feature: Manage Cart
   Scenario: Add product to Cart
     When I press "Add to Cart"
     Then I should see "Cart"
-    And I should have 1 product in Cart
+    And I should have 1 item in Cart
     And I should have "The Lord of the Rings" in Cart
+
