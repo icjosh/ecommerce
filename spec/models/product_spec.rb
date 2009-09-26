@@ -37,4 +37,10 @@ describe Product do
  
     Product.count.should == 1
   end
+
+  it "should find products for sale" do
+    product = Product.create(@valid_attributes)
+    product.save
+    Product.find_products_for_sale.count.should == 1
+  end
 end

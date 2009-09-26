@@ -7,4 +7,8 @@ class Product < ActiveRecord::Base
                       :message => "must be a URL for an image in GIF, JPG or PNG format")
   
   validates_length_of :title, :minimum => 10, :message => "seems too short"
+
+  def self.find_products_for_sale
+    find(:all, :order => "title")
+  end
 end
