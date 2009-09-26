@@ -28,4 +28,13 @@ describe Product do
     product.errors.on(:price).should_not be_nil
     product.errors.on(:image_url).should_not be_nil
   end
+
+  it "should not create products with duplicate titles" do
+    2.times do
+      product = Product.create(@valid_attributes)
+      product.save
+    end
+ 
+    Product.count.should == 1
+  end
 end
