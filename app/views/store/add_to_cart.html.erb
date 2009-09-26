@@ -1,9 +1,17 @@
-<h1>Your Cart</h1>
-<ul>
-  <% @cart.items.each do |item| %>
-    <li><%= item.quantity %> &times; <%=h item.title %></li>
+<div class="cart-title">Your Cart</div>
+<table>
+  <% @cart.items.each do |cart_item| %>
+    <tr>
+      <td><%= cart_item.quantity %> &times;</td>
+      <td><%=h cart_item.title %></td>
+      <td class="item-price"><%= number_to_currency cart_item.price %></td>
+    </tr>
   <% end %>
-</ul>
+  <tr class="total-line">
+    <td colspan="2">Total</td>
+    <td class="total-cell"><%= number_to_currency @cart.total_price %></td>
+  </tr>
+</table>
 
 <%= button_to "Empty Cart", :action => :empty_cart %>
 
