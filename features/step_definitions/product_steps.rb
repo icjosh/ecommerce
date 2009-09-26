@@ -5,6 +5,10 @@ Given /^I have products titled (.+)$/ do |titles|
   end
 end
 
+Given /^I have no products$/ do
+  Product.delete_all
+end
+
 Then /^I should have (\d+) products?$/ do |count|
   Product.count.should == count.to_i
 end
