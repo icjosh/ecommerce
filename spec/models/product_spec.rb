@@ -13,4 +13,10 @@ describe Product do
   it "should create a new instance given valid attributes" do
     Product.create!(@valid_attributes)
   end
+
+  it "should not create a new instance given invalid price" do
+    Product.create!(:title => title, :price => -50,
+                    :description => "dummy",
+                    :image_url => "test.jpg")
+  end
 end
