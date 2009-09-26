@@ -21,15 +21,15 @@ Feature: Manage Products
       | Description | Dummy   |
       | Image url   | <url>   |
     And I press "Create"
-    Then I should <action>
+    Then I should <action> "Product was successfully created."
     
 
     Examples:
-      | title             | price   | url          | action                                       | 
-      | Motorola V3 Phone | 50.50   | motorola.jpg | see "Product was successfully created."      |
-      | Nokia Phone       | -75.25  | nokia.jpg    | not see "Product was succesfully created"    |
-      | Harry Potter Book | 25.25   | potter.doc   | not see "Product was succesfully created."   |
-      
+      | title             | price   | url          | action  |
+      | Motorola V3 Phone | 50.50   | motorola.jpg | see     |
+      | Nokia Phone       | -75.25  | nokia.jpg    | not see |
+      | Harry Potter Book | 25.25   | potter.doc   | not see |
+     
 
   Scenario: Edit Product
     Given I have product titled The Lord of the Rings
