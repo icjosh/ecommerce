@@ -1,4 +1,4 @@
-Then /^I should have (\d+) products? in Cart$/ do |count|
+Then /^I should have (\d+) items? in Cart$/ do |count|
   session[:cart].items.size.should == count.to_i
 end
 
