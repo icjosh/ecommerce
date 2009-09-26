@@ -3,10 +3,17 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Product do
   before(:each) do
     @valid_attributes = {
-      :title => "value for title",
+      :title => "A dummy product",
       :price => 9.99,
-      :description => "value for description",
-      :image_url => "value for image_url"
+      :description => "Dummy Description",
+      :image_url => "dummy.jpg"
+    }
+
+    @invalid_attributes = {
+      :title => "xxx",
+      :price => -1,
+      :description => "dummy",
+      :image_url => "boo.sh"
     }
   end
 
@@ -14,9 +21,8 @@ describe Product do
     Product.create!(@valid_attributes)
   end
 
-  it "should not create a new instance given invalid price" do
-    Product.create!(:title => title, :price => -50,
-                    :description => "dummy",
-                    :image_url => "test.jpg")
+  it "should not save to the database given invalid attributes" do
+    product = Product.create(@invalid_attributes)
+    product.valid?.should be_false
   end
 end
