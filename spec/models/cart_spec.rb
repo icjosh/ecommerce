@@ -28,4 +28,10 @@ describe Cart do
     @cart.items.size.should == 1
     @cart.items[0].quantity.should == 2
   end
+
+  it "should remove item from cart" do
+    @cart.add_product(@product)
+    @cart.remove_from_cart(@product)
+    @cart.items.size.should == 0
+  end
 end
