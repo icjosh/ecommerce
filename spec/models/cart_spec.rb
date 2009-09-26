@@ -34,4 +34,9 @@ describe Cart do
     @cart.remove_from_cart(@product)
     @cart.items.size.should == 0
   end
+
+  it "should give total price of items" do
+    2.times { @cart.add_product(@product) }
+    @cart.total_price.should == @product.price * 2
+  end
 end
