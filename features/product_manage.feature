@@ -1,4 +1,4 @@
-@focus
+@products
 Feature: Manage Products
   In order to manage products
   As a central part of a e-commerce application
