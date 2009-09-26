@@ -1,2 +1,10 @@
-<h1>Store#index</h1>
-<p>Find me in app/views/store/index.html.erb</p>
+<h1>Your Catalog</h1>
+
+<% @products.each do |product| %>
+  <div class="entry">
+    <%= image_tag product.image_url %>
+    <h3><%=h product.title %></h3><br />
+    <%= product.description %><br />
+    <span class="price"><%= number_to_currency(product.price) %></span>
+  </div>
+<% end %>
