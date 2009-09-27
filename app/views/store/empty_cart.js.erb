@@ -1,4 +1,6 @@
 cart = $("#cart");
-cart.slideUp("slow");
 cart.html(
     '<%= escape_javascript(render(:partial => "cart", :object => @cart)) %>');
+$("#flash_notice").append("<%= escape_javascript(flash.delete(:notice)) %>");
+$("#cart_actions").slideUp("faster");
+cart.slideUp("faster");

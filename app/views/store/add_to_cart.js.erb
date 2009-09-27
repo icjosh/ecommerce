@@ -1,1 +1,3 @@
-$("#cart_items").html("<%= escape_javascript(render(:partial => 'cart_item', :collection => @cart.items)) %>");
+$("#cart").html('<%= escape_javascript(render(:partial => "cart", :object => @cart)) %>'); 
+$("#cart").slideDown("slow");
+$("#cart_actions").show();

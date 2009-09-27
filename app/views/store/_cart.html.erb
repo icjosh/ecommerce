@@ -1,19 +1,10 @@
-<% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
-  <div class="cart-title">Your Cart</div>
-  <table>
-    <div id="cart_items">
-      <%= render :partial => "cart_item", :collection => cart.items %>
-    </div>
-    <div id="total_price">
-      <tr class="total-line">
-        <td colspan="2">Total</td>
-        <td class="total-cell"><%= number_to_currency cart.total_price %></td>
-      </tr>
-    </div>
-  </table>
-  <div id="cart_actions">
-    <div id="empty_cart">
-      <%= button_to "Empty Cart", :action => :empty_cart %><br />
-    </div>
-  </div>
-<% end %>
+<div class="cart-title">Your Cart</div>
+<table>
+  <%= render :partial => "cart_item", :collection => cart.items %>
+  
+  <tr class="total-line">
+    <td colspan="2">Total</td>
+    <td class="total-cell"><%= number_to_currency cart.total_price %></td>
+  </tr>
+</table>
+

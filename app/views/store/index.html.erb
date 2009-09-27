@@ -1,22 +1,24 @@
 <%= title "Your Catalog" %>
 
 <% content_for :sidebar do %>
-  <!-- #<% hidden_div_if(@cart.items.empty?, :id => "cart") do %> -->
-  <div id="cart">
+  <% hidden_div_if(@cart.items.empty?, :id => "cart") do %> 
     <%= render :partial => "cart", :object => @cart %>
-  </div>
-  <!-- #<% end %> -->
+  <% end %>
+  <% hidden_div_if(@cart.items.empty?, :id=> "cart_actions") do %>
+    <%= button_to "Empty Cart", :action => :empty_cart %><br />
+  <% end %>
 <% end %>
 
 <h1>Your Catalog</h1>
 
-  <% @products.each do |product| %>
-    <div id="product-list" class="entry">
-      <%= image_tag product.image_url %>
-      <h3><%=h product.title %></h3><br />
-      <%= product.description %><br />
-      <span class="price"><%= number_to_currency(product.price) %></span>
-      <%= button_to "Add to Cart", :action => :add_to_cart, :id => product %>
-    </div>
-  <% end %>
+<% @products.each do |product| %>
+  <div id="product-list" class="entry">
+    <%= image_tag product.image_url %>
+    <h3><%=h product.title %></h3><br />
+    <%= product.description %><br />
+    <span class="price"><%= number_to_currency(product.price) %></span>
+    <%= button_to "Add to Cart", :action => :add_to_cart, :id => product %>
+  </div>
+<% end %>
+
 

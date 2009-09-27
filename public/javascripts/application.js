@@ -2,11 +2,22 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $(document).ready(function() {
-    $("div#notice").each(function(value, index) {
-        value.hide();
-    });
     
-    $("#cart_actions form").submit(function() {
+    // $("div#notice").each(function(value, index) {
+    //     value.hide();
+    // });
+    
+    $("#cart_actions form.button-to").submit(function() {
+        $.post($(this).attr("action"), $(this).serialize(), null, "script");
+        return false;
+    })
+/*
+    $("div#product-list.entry .button-to").submit(function() {
+        $.post($(this).attr("action"), $(this).serialize(), null, "script");
+        return false;
+    })
+*/
+    $(".button-to").submit(function() {
         $.post($(this).attr("action"), $(this).serialize(), null, "script");
         return false;
     })
