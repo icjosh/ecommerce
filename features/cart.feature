@@ -8,9 +8,6 @@ Feature: Manage Cart
     Given I have product titled The Lord of the Rings
     And I am on the store page
 
-  Scenario: Hide empty Cart
-    Then I should not see "Cart"
-
   Scenario: Add product to Cart
     When I press "Add to Cart"
     Then I should see "Cart"
