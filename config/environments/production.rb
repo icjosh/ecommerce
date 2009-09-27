@@ -30,7 +30,7 @@ config.action_view.cache_template_loading            = true
 config.after_initialize do
   # TODO: Get a PayPal devel account and fill this details
   ActiveMerchant::Billing::Base.mode = :production
-  ::GATEWAY = ActiveMerchant::Billing::PayPalGateway.new(
+  ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
     :login     => "fillthisin",                                                     :password  => "fillthisin",
     :signature => "fillthisin"                                                    )
 end

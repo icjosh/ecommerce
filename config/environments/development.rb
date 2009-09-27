@@ -19,7 +19,7 @@ config.action_mailer.raise_delivery_errors = false
 config.after_initialize do
   # TODO: Get a PayPal devel account and correct this details
   ActiveMerchant::Billing::Base.mode = :test
-  ::GATEWAY = ActiveMerchant::Billing::PayPalGateway.new(
+  ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
     :login     => "fillthisin", 
     :password  => "fillthisin",
     :signature => "fillthisin"                                                    )
