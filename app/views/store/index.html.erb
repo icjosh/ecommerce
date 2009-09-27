@@ -1,15 +1,17 @@
 <%= title "Your Catalog" %>
 
 <% content_for :sidebar do %>
+  <!-- #<% hidden_div_if(@cart.items.empty?, :id => "cart") do %> -->
   <div id="cart">
     <%= render :partial => "cart", :object => @cart %>
   </div>
+  <!-- #<% end %> -->
 <% end %>
 
 <h1>Your Catalog</h1>
 
   <% @products.each do |product| %>
-    <div class="entry">
+    <div id="product-list" class="entry">
       <%= image_tag product.image_url %>
       <h3><%=h product.title %></h3><br />
       <%= product.description %><br />
