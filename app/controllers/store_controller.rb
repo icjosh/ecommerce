@@ -1,4 +1,6 @@
 class StoreController < ApplicationController
+  before_filter :find_cart, :except => :index
+
   def index
     @products = Product.find_products_for_sale
     @cart = find_cart
@@ -18,13 +20,16 @@ class StoreController < ApplicationController
   end
 
   def empty_cart
-    session[:cart].items.clear
-    redirect_to_index "Your Cart is currently empty"
+    @cart.items.clear
+    respond_to do |format|
+      format.html { redirect_to_index "Your Cart is currently empty" }
+      format.js
+    end
   end
 
   private
   def find_cart
-    session[:cart] ||= Cart.new
+    @cart = session[:cart] ||= Cart.new
   end
 
   def redirect_to_index(msg = nil)
