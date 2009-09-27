@@ -1,9 +1,10 @@
 class StoreController < ApplicationController
-  before_filter :find_cart, :except => :index
+  before_filter :find_cart
 
+  # TODO: Messages are not being sent in the javascripts responses
+  
   def index
     @products = Product.find_products_for_sale
-    @cart = find_cart
   end
 
   def add_to_cart
@@ -13,9 +14,11 @@ class StoreController < ApplicationController
       logger.error("Attempt to access invalid product #{params[:id]}")
       redirect_to_index "Invalid product"
     else
-      @cart = find_cart
       @cart.add_product(product)
-      redirect_to_index
+      respond_to do |format|
+        format.html { redirect_to_index }
+        format.js
+      end
     end
   end
 
