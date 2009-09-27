@@ -26,3 +26,11 @@ config.action_view.cache_template_loading            = true
 
 # Enable threaded mode
 # config.threadsafe!
+
+config.after_initialize do
+  # TODO: Get a PayPal devel account and fill this details
+  ActiveMerchant::Billing::Base.mode = :production
+  ::GATEWAY = ActiveMerchant::Billing::PayPalGateway.new(
+    :login     => "fillthisin",                                                     :password  => "fillthisin",
+    :signature => "fillthisin"                                                    )
+end

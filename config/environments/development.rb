@@ -15,3 +15,13 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+config.after_initialize do
+  # TODO: Get a PayPal devel account and correct this details
+  ActiveMerchant::Billing::Base.mode = :test
+  ::GATEWAY = ActiveMerchant::Billing::PayPalGateway.new(
+    :login     => "fillthisin", 
+    :password  => "fillthisin",
+    :signature => "fillthisin"                                                    )
+end
+                                                         
