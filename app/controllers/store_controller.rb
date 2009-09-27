@@ -14,7 +14,7 @@ class StoreController < ApplicationController
       logger.error("Attempt to access invalid product #{params[:id]}")
       redirect_to_index "Invalid product"
     else
-      @cart.add_product(product)
+      @current_item = @cart.add_product(product)
       respond_to do |format|
         format.html { redirect_to_index }
         format.js
