@@ -14,6 +14,7 @@ class Cart
     else
       @items << CartItem.new(product)
     end
+    current_item
   end
 
   def remove_from_cart(product)
