@@ -1,2 +1,4 @@
-$("#cart").html("")
-$("#cart").hide();
+cart = $("#cart");
+cart.slideUp("slow");
+cart.html(
+    '<%= escape_javascript(render(:partial => "cart", :object => @cart)) %>');
