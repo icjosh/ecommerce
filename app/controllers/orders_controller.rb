@@ -7,7 +7,11 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = @current_cart.build_order(params[:order])
+    @order = Order.new(params[:id])
+
+    # TODO: when associtations are done, build order like this
+    # @current_cart.build_order(params[:order])
+    
     @order.ip_address = request.remote_ip
     if @order.save
       if @order.purchase
