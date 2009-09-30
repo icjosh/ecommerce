@@ -10,8 +10,12 @@ class OrdersController < ApplicationController
     @order = @current_cart.build_order(params[:order])
     @order.ip_address = request.remote_ip
     if @order.save
-      flash[:notice] = "Succesfully created order."
-      redirect_to orders_url
+      if @order.purchase
+        render :action => "success"
+      else
+        render :action => "failure"
+      end
+      
     else
       render :action => "new"
     end
