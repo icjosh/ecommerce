@@ -1,3 +1,5 @@
 $("#cart").html('<%= escape_javascript(render(:partial => "cart", :object => @cart)) %>'); 
-$("#cart").slideDown("slow");
+$("#cart").show("slow");
 $("#cart_actions").show();
+
+
