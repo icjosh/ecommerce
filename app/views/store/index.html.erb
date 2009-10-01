@@ -5,7 +5,14 @@
     <%= render :partial => "cart", :object => @cart %>
   <% end %>
   <% hidden_div_if(@cart.items.empty?, :id=> "cart_actions") do %>
-    <%= button_to "Empty Cart", :action => :empty_cart %><br />
+  <table>
+    <tr>
+      <td><%= button_to "Checkout", :controller => "Orders",
+                                    :action => :new %></td>
+      <td><%= button_to "Empty Cart", :action => :empty_cart %></td>
+    </tr>
+  </table>
+                                    
   <% end %>
 <% end %>
 
