@@ -7,7 +7,8 @@ $(document).ready(function() {
     //     value.hide();
     // });
     
-    $("#cart_actions form.button-to").submit(function() {
+    // TODO: Clean this
+    $("#cart_actions form.button-to:eq(1)").submit(function() {
         $.post($(this).attr("action"), $(this).serialize(), null, "script");
         return false;
     })
@@ -17,7 +18,7 @@ $(document).ready(function() {
         return false;
     })
 */
-    $(".button-to").submit(function() {
+    $("#product-list .button-to").submit(function() {
         $.post($(this).attr("action"), $(this).serialize(), null, "script");
         return false;
     })
