@@ -41,17 +41,18 @@
       </div>
       <div id="main">
         <%= yield %>
-        <div id="footer">
-          <div class="block">
-            <center><p>Copyright &copy; 2009 Adrian Perez.</p></center>
-          </div>      
-        </div>
       </div>
       <div id="sidebar">
         <%= yield :sidebar %>
       </div>
+      <!-- Footer was here previously -->
       <div class="clear"></div>      
     </div>    
+  </div>
+  <div id="footer">
+    <div class="block">
+      <center><p>Copyright &copy; 2009 Adrian Perez.</p></center>
+    </div>      
   </div>
 </body>
 </html>
