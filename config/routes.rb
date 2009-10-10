@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :users
+
   map.resources :products
   map.resources :orders
   map.store '/store', :controller => 'store', :action => 'index'
