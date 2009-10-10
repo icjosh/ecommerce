@@ -14,13 +14,13 @@ Feature: Manage Products
   Scenario Outline: Product Creation
     Given I have no products
     And I am on the list of products
-    When I follow "New Product"
+    When I follow "New"
     And I fill in the following:
       | Title       | <title> |
       | Price       | <price> |                                   
       | Description | Dummy   |
       | Image url   | <url>   |
-    And I press "Create"
+    And I press "Save"
     Then I should <action> "Product was successfully created."
     
 
@@ -36,7 +36,7 @@ Feature: Manage Products
     And I am on the "The Lord of the Rings" product
     When I follow "Edit"
     And I fill in "Price" with "25.00"
-    And I press "Update"
+    And I press "Save"
     Then I should see "Product was successfully updated."
     And I should see "The Lord of the Rings"
     And I should see "25.00"
