@@ -1,0 +1,31 @@
+  <% if !f.error_messages.empty? %>
+    <div class="flash">
+      <div class="message error">
+        <p><%= f.error_messages %></p>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="group">
+    <div class="left">
+      <label class="label right">Login</label>
+    </div>
+    <div class="right">
+      <%= f.text_field :username %>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="group">
+    <div class="left">
+      <label class="label right">Password</label>
+    </div>
+    <div class="right">
+      <%= f.password_field :password %>
+    </div>
+  </div>
+  <div class="group navform">
+    <div class="right">
+      <input type="submit" class="button" value="Sign in" />
+    </div>
+    <div class="clear"></div>
+  </div>
