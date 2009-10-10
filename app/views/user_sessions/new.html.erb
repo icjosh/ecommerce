@@ -1,17 +1,17 @@
   <div class="block" id="block-login">
-  <div class="secondary-navigation">
-    <ul>
-      <li class="active">Log In</li>
-    </ul>
-    <div class="clear"></div>
-  </div>          
-  <div class="content login">          
-    <h2 class="title">Log In</h2>
-    <div class="inner">
-      <% form_for :user_session, :url => user_sessions_path, :html => { :class => :form } do |f| -%>
-        <%= render :partial => "form", :locals => {:f => f} %>
-      <% end -%>
+    <div class="secondary-navigation">
+      <ul>
+        <li class="active"><%= link_to 'Log In', login_path %></li>
+      </ul>
+      <div class="clear"></div>
+    </div>          
+    <div class="content login">          
+      <h2 class="title">Log In</h2>
+      <div class="inner">
+        <% form_for :user_session, :url => user_sessions_path, :html => { :class => :form } do |f| -%>
+          <%= render :partial => "form", :locals => {:f => f} %>
+        <% end -%>
+      </div>
     </div>
   </div>
-</div>
 
