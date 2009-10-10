@@ -12,12 +12,18 @@
       <div id="user-navigation">
         <ul>
           <% if current_user %>
-           <li><%= link_to "Profile", edit_user_path(:current) %>
-           <li><a href="#">Settings</a></li>
-           <li><%= link_to "Logout", logout_path %></li>
+            <li>
+              <font color="white">
+              Logged in as: <b><%= current_user.username %></b>
+              </font>
+            </li>
+            
+            <li><%= link_to "Profile", edit_user_path(:current) %></li>
+            <li><a href="#">Settings</a></li>
+            <li><%= link_to "Logout", logout_path %></li>
           <% else %>
-           <li><%= link_to "Register", new_user_path %></li>
-           <li><%= link_to "Login", login_path %></li>
+            <li><%= link_to "Register", new_user_path %></li>
+            <li><%= link_to "Login", login_path %></li>
          <% end %>
         </ul>
         <div class="clear"></div>
