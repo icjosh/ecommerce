@@ -17,6 +17,7 @@
           <th>Description</th>
           <th class="last">&nbsp;</th>
         </tr>
+
         <% @products.each do |product| -%>
         <tr class="<%= cycle("odd", "even") %>">
           <td>
@@ -42,9 +43,11 @@
       </table>
       <div class="actions-bar">
         <div class="actions">
-        </div>
-        
-        <div class="clear"></div>
+      </div>
+
+      <%= will_paginate @products %>
+
+      <div class="clear"></div>
       </div>
     </div>
   </div>
