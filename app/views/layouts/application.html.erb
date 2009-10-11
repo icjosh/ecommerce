@@ -25,10 +25,13 @@
             <li><a href="#">
               <img alt="Settings" src="/images/settings.png" align="top"/> Settings</a>
             </li>
-            <li><%= link_to "#{image_tag 'logout.png', :align => 'top'}  Logout", logout_path %></li>
+            <li><%= link_to "#{image_tag 'logout.png',
+                              :align => 'top'} Logout", logout_path %></li>
           <% else %>
-            <li><%= link_to "Register", new_user_path %></li>
-            <li><%= link_to "Login", login_path %></li>
+            <li><%= link_to "#{image_tag('/images/register.png',
+                    :align => 'top')} Register", new_user_path %></li>
+            <li><%= link_to "#{image_tag 'login.png',
+                            :align => 'top'} Login", login_path %></li>
          <% end %>
         </ul>
         <div class="clear"></div>
