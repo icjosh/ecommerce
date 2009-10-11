@@ -1,4 +1,3 @@
-* Fix product destroy and links.
 * Convert "Simple Sidebar" to Cart in application layout?
 * Unobtrusively add Ajax support or push to EXT definitely.
 * Add more user-friendly product display: search, sort, filter and the like.
