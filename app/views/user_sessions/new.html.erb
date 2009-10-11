@@ -3,11 +3,15 @@
       <ul>
         <li class="active"><%= link_to 'Log In', login_path %></li>
       </ul>
-      <div class="clear"></div>
+      <div class="clear">
+        <span><img alt="user_login" src="images/user_login.png"  align="right" /></span>
+      </div>
     </div>          
     <div class="content login">          
       <h2 class="title">Log In</h2>
+      
       <div class="inner">
+        
         <% form_for :user_session, :url => user_sessions_path, :html => { :class => :form } do |f| -%>
           <%= render :partial => "form", :locals => {:f => f} %>
         <% end -%>
