@@ -1,5 +1,16 @@
-* Add Cart
-* Add Order
-* Add mocha support
-* Integrate Paypal and Paypal Express Checkout
+* Unobtrusively add Ajax support or push to EXT definitely.
+* Add more user-friendly product display: search, sort, filter and the like.
+* Make front controller for semi-static pages: Welcome, About us, etc.
+* Refactor form error display in views.
+* Integrate Cart into ProductsController or FrontController.
+* Finish Order Checkout implementation.
+* Integrate Paypal and Paypal Express Checkout.
+* Provide the user with the option to choose Payment method: Paypal or direct.
+* Write missing scenarios and rspec tests.
+* Design banner.
+* Note the user of the tango-icon-theme for several app icons.
+* Make the licensing information explicit.
+* Add mocha support.
+
+
 
