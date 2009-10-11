@@ -1,7 +1,14 @@
 <div class="block">
-  <h3>Simple Sidebar</h3>
+  <h3><%= image_tag 'cart/cart.png', :align => 'top' %> &nbsp; Your Cart</h3>
   <div class="content">
-    <p>This sidebar will hold content such as RSS feeds, or other important material which must be avaliable on a per-page basis or globally. It will require for me to fill this out, when time arose.</p>
+    <p>This sidebar will hold the cart items, and will hide if empty.</p>
+    <hr/>
+    <center>
+      <%=image_tag 'cart/cart_go.png', :align => 'top' %>
+      &nbsp; Checkout  &nbsp;
+      <%= image_tag 'cart/cart_delete.png', :align => 'top' %>
+      &nbsp; Empty Cart 
+    </center>
   </div>
 </div>
 <div class="block">
