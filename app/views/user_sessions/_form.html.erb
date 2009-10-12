@@ -1,7 +1,10 @@
   <% if !f.error_messages.empty? %>
     <div class="flash">
       <div class="message error">
-        <p><%= f.error_messages %></p>
+        <p>
+          <strong>Error:</strong> 
+          Invalid login/password combination.
+        </p>
       </div>
     </div>
   <% end %>
