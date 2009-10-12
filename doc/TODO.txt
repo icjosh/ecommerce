@@ -11,6 +11,7 @@
 * Design banner.
 * Note the user of the tango-icon-theme for several app icons.
 * Make the licensing information explicit.
+* Maybe add Donate link.
 * Add mocha support.
 
 
