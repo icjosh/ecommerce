@@ -12,6 +12,8 @@ a img { border: none; }
 body {
   font-size: 12px;
   font-family: sans-serif;  
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 #container {
