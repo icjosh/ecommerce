@@ -5,8 +5,22 @@
 	<title>E-Commerce App</title>
 	<%= stylesheet_link_tag 'web_app_theme', "themes/default/style" %>
         <%= auto_discovery_link_tag :atom, products_path(:atom) %>
+	<!-- Dojo support -->
+	<script type="text/javascript"
+		src="/javascripts/dojo/dojo/dojo.js"
+		djConfig="parseOnLoad: true">
+	</script>
+	<link rel="stylesheet" 
+	      href="/javascripts/dojo/dojo/resources/dojo.css" />
+	<link rel="stylesheet" 
+	      href="/javascripts/dojo/dijit/themes/tundra/tundra.css" />
+	<script type="text/javascript">
+	  dojo.require("dojo.parser");
+	  dojo.require("dijit.form.ValidationTextBox");
+	</script>
+	<!-- End of Dojo support -->
 </head>
-<body>
+<body class="tundra">
   <div id="container">
     <div id="header">
       
