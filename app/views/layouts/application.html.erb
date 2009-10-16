@@ -15,16 +15,20 @@
 	<link rel="stylesheet" 
 	      href="/javascripts/dojo/dijit/themes/tundra/tundra.css" />
 	<script type="text/javascript">
-	  dojo.require("dojo.parser");
+	  dojo.addOnLoad(function() { 
+          	dojo.addClass(dojo.body(), "tundra");
+          });
+          dojo.require("dojo.parser");
 	  dojo.require("dijit.form.ValidationTextBox");
 	  dojo.require("dijit.form.NumberTextBox");
 	  dojo.require("dijit.form.CurrencyTextBox");
 	  dojo.require("dijit.form.Textarea");
 	  dojo.require("dijit.form.Button");
+          
 	</script>
 	<!-- End of Dojo support -->
 </head>
-<body class="tundra">
+<body>
   <div id="container">
     <div id="header">
       
