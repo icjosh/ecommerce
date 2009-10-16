@@ -7,26 +7,46 @@
   <% end %>
   <div class="group">
     <%= f.label :username, "Username", :class => :label %>
-    <%= f.text_field :username, :class => 'text_field' %>
-    <span class="description">Ex: blackxored</span>
+    <%= f.text_field :username, :class => 'text_field',
+    	:dojoType	=> "dijit.form.ValidationTextBox",
+    	:required	=> "true",
+    	:promptMessage	=> "Enter your user name.",
+    	:trim 		=> "true",
+    	:lowercase	=> "true"
+    %>
   </div>
 
   <div class="group">
     <%= f.label :email, "Email", :class => :label %>
-    <%= f.text_field :email, :class => 'text_field' %>
-    <span class="description">Ex: adrianperez.deb@gmail.com</span>
+    <%= f.text_field :email, :class => 'text_field',
+    	:dojoType	=> "dijit.form.ValidationTextBox",
+	:required	=> "true",
+    	:regExp		=> "\b[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}\b",
+    	:promptMessage	=> "Enter email address.",
+    	:invalidMessage	=> "Invalid Email address.",
+    	:trim		=> "True"
+    %>
+    
   </div>
 
   <div class="group">
     <%= f.label :password, "Password", :class => :label %>
-    <%= f.password_field :password, :class => 'text_field' %>
-    <span class="description">Ex: ecommerce_evolution/2009</span>
+    <%= f.password_field :password, :class => 'text_field',
+	:dojoType 	=> "dijit.form.ValidationTextBox",
+    	:required	=> "true",
+    	:promptMessage	=> "Enter you password.",
+    	:trim		=> "false"
+    %>
   </div>
   <div class="group">
     <%= f.label :password_confirmation, "Password Confirmation",
          :class => :label %>
-    <%= f.password_field :password_confirmation, :class => 'text_field' %>
-    <span class="description">Ex: ecommerce_evolution/2009</span>
+     <%= f.password_field :password_confirmation, :class => 'text_field',
+	:dojoType 	=> "dijit.form.ValidationTextBox",
+    	:required	=> "true",
+    	:promptMessage	=> "Enter you password (again).",
+    	:trim		=> "false"
+    %>
   </div>
           
 <div class="group navform">
