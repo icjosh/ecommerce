@@ -14,7 +14,13 @@
       <label class="label right">Login</label>
     </div>
     <div class="right">
-      <%= f.text_field :username %>
+      <%= f.text_field :username, :class => 'text_field',
+    	:dojoType	=> "dijit.form.ValidationTextBox",
+    	:required	=> "true",
+    	:promptMessage	=> "Enter your user name.",
+    	:trim 		=> "true",
+    	:lowercase	=> "true"
+      %>
     </div>
   </div>
   <div class="clear"></div>
@@ -23,12 +29,20 @@
       <label class="label right">Password</label>
     </div>
     <div class="right">
-      <%= f.password_field :password %>
+      <%= f.password_field :password, :class => 'text_field',
+	:dojoType 	=> "dijit.form.ValidationTextBox",
+    	:required	=> "true",
+    	:promptMessage	=> "Enter your password.",
+    	:trim		=> "false"
+      %>
     </div>
   </div>
+  <br />
   <div class="group navform">
     <div class="right">
-      <input type="submit" class="button" value="Sign in" />
+      <input type="submit" class="button" value="Sign in"
+	 dojoType="dijit.form.Button"
+	 label="Sign in"/> 
     </div>
     <div class="clear"></div>
   </div>
