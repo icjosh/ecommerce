@@ -35,7 +35,7 @@
             <%= number_to_currency(product.price) %>
           </td>
           <td>
-            <%=h truncate(product.description, 80) %>
+            <%=h truncate(product.description, :length => 80) %>
           </td>
           <td>
             <a href="#">
