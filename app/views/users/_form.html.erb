@@ -34,7 +34,7 @@
     <%= f.password_field :password, :class => 'text_field',
 	:dojoType 	=> "dijit.form.ValidationTextBox",
     	:required	=> "true",
-    	:promptMessage	=> "Enter you password.",
+    	:promptMessage	=> "Enter your password.",
     	:trim		=> "false"
     %>
   </div>
@@ -44,12 +44,15 @@
      <%= f.password_field :password_confirmation, :class => 'text_field',
 	:dojoType 	=> "dijit.form.ValidationTextBox",
     	:required	=> "true",
-    	:promptMessage	=> "Enter you password (again).",
+    	:promptMessage	=> "Enter your password (again).",
     	:trim		=> "false"
     %>
   </div>
           
 <div class="group navform">
-  <input type="submit" class="button" value="Save &rarr;" /> or <%= link_to 'Cancel', root_url %>
+  <input type="submit" class="button" value="Save &rarr;"
+	 dojoType="dijit.form.Button"
+	 label="Save &rarr;"/> 
+  or <%= link_to 'Cancel', root_url %>
 </div>
 
