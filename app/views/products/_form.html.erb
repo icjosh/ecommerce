@@ -7,28 +7,56 @@
   <% end %>
   <div class="group">
     <%= f.label :title, "Title", :class => :label %>
-    <%= f.text_field :title, :class => 'text_field' %>
-    <span class="description">Ex: Creative Labs MP3 Player</span>
+    <%= f.text_field :title, :class => 'text_field',
+        :dojoType 	=> "dijit.form.ValidationTextBox",
+        :required 	=> "true",
+        :propercase 	=> "true",
+        :promptMessage 	=> "Enter Product title.",
+        :invalidMessage => "Product title is required.",
+        :trim 		=> "true"
+    %>
   </div>
 
   <div class="group">
     <%= f.label :price, "Price", :class => :label %>
-    <%= f.text_field :price, :class => 'text_field' %>
-    <span class="description">Ex: 75.00</span>
+    <!-- TODO: Fix this isn't working -->
+    <%= f.text_field :price, 
+	:dojoType 	=> "dijit.form.CurrencyTextBox",
+    	:promptMessage 	=> "Enter Product price.",
+    	:invalidMessage	=> "Price must be greater than 0.01.",
+    	:currency	=> "EUR",
+    	:constraints	=> "{min: 0.01}",
+    	:required	=> "true"
+    %>
   </div>
 
   <div class="group">
     <%= f.label :description, "Description", :class => :label %>
-    <%= f.text_area :description, :class => 'text_area' %>
-    <span class="description">Ex: A very useful and nice MP3 player</span>
+    <%= f.text_area :description, :class => 'text_area',
+	:dojoType	=> "dijit.form.Textarea",
+    	:required	=> "true",
+    	:trim		=> "true"
+    %>
+    
   </div>
 
   <div class="group">
     <%= f.label :image_url, "Image url", :class => :label %>
-    <%= f.text_field :image_url, :class => 'text_field' %>
-    <span class="description">Ex: http://flickr.com/images/25.jpg</span>
+    <%= f.text_field :image_url, :class => 'text_field',
+	:dojoType 	=> "dijit.form.ValidationTextBox",
+    	:promptMessage	=> "Enter a link to the product image.",
+    	:invalidMessage => "Invalid link (must end in .jpg, .gif or .png).",
+    	:required 	=> "true",
+    	:trim		=> "true"
+    %>
+    <!-- TODO: Fix this validation
+    	:regExp		=> '(\.gif|\.jpg|\.png)$',
+    --> 
   </div>
         
 <div class="group navform">
-  <input type="submit" class="button" value="Save &rarr;" /> or <%= link_to 'Cancel', products_path %>
+  <input type="submit" class="button" value="Save &rarr;"
+	 dojoType="dijit.form.Button"
+	 label="Save &rarr;"/> 
+  or <%= link_to 'Cancel', products_path %>
 </div>
