@@ -11,3 +11,11 @@ end
 Given /^I have no users$/ do
   User.delete_all
 end
+
+Given /^I am logged in with user "([^\"]*)" and password "([^\"]*)"$/ do |user, pwd|
+  visit path_to('the root page')
+  click_link('Login')
+  fill_in 'Username', :with => user
+  fill_in 'Password', :with => pwd
+  click_button 'Sign in'
+end
