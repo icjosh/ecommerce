@@ -9,12 +9,11 @@
     </div>          
     <div class="content login">          
       <h2 class="title">Log In</h2>
-      
       <div class="inner">
-        <div class="grouping">
-          <% form_for :user_session, :url => user_sessions_path, :html => { :class => :form } do |f| -%>
-            <%= render :partial => "form", :locals => {:f => f} %>
-          <% end -%>
+	<div class="grouping">
+        <% form_for :user_session, :url => user_sessions_path, :html => { :class => :form, :dojoType => "dijit.form.Form" } do |f| -%>
+          <%= render :partial => "form", :locals => {:f => f} %>
+        <% end -%>
 	</div>
       </div>
     </div>

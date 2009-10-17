@@ -10,9 +10,11 @@
   <div class="content">            
     <h2 class="title">Edit Product</h2>
     <div class="inner">
-      <% form_for @product, :url => product_path(@product), :html => { :class => :form } do |f| -%>
-        <%= render :partial => "form", :locals => {:f => f} %>
-      <% end -%>
+      <div class="grouping">
+	<% form_for @product, :url => product_path(@product), :html => { :class => :form } do |f| -%>
+          <%= render :partial => "form", :locals => {:f => f} %>
+	<% end -%>
+      </div>
     </div>
   </div>
 </div>
