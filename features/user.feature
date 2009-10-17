@@ -6,7 +6,7 @@ Feature: User Management
 
   Background: 
     Given I have no users
-    Given I have user with name "testuser1" and password "testpw1"
+    And I have user with name "testuser1" and password "testpw1"
     And I am on the root page
 
   Scenario: Register
