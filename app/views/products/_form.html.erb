@@ -20,7 +20,7 @@
   <div class="group">
     <%= f.label :price, "Price", :class => :label %>
     <!-- TODO: Fix this isn't working -->
-    <%= f.text_field :price, 
+    <%= f.text_field :price, :class => 'text_field',
 	:dojoType 	=> "dijit.form.CurrencyTextBox",
     	:promptMessage 	=> "Enter Product price.",
     	:invalidMessage	=> "Price must be greater than 0.01.",
@@ -34,6 +34,7 @@
     <%= f.label :description, "Description", :class => :label %>
     <%= f.text_area :description, :class => 'text_area',
 	:dojoType	=> "dijit.form.Textarea",
+    	:style		=> "width: 182px;",
     	:required	=> "true",
     	:trim		=> "true"
     %>
