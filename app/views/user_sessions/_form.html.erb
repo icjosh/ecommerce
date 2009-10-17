@@ -11,7 +11,7 @@
 
   <div class="group">
     <div class="left">
-      <label class="label right">Login</label>
+      <%= f.label :username, "Username", :class => "label right" %>
     </div>
     <div class="right">
       <%= f.text_field :username, :class => 'text_field',
@@ -26,7 +26,7 @@
   <div class="clear"></div>
   <div class="group">
     <div class="left">
-      <label class="label right">Password</label>
+      <%= f.label :password, "Password", :class => 'label right' %>
     </div>
     <div class="right">
       <%= f.password_field :password, :class => 'text_field',
