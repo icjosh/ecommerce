@@ -36,4 +36,13 @@ Feature: User Management
     Then I should see "Succesfully logged out."
     And I should not see "Logged in as"
 
-  
+  Scenario: Edit Profile
+    Given I follow "Login"
+    And I fill in "Username" with "testuser1"
+    And I fill in "Password" with "testpw1"
+    And I press "Sign in"
+    And I follow "Profile"
+    And I fill in "Email" with "textuser1@example.com"
+    And I press "Save"
+    Then I should see "User Profile was successfully updated."
+    And I should be on the root page
