@@ -7,3 +7,7 @@ Given /^I have user with name "([^\"]*)" and password "([^\"]*)"$/ do |user, pwd
   user = User.new(params)
   user.save!
 end
+
+Given /^I have no users$/ do
+  User.delete_all
+end
