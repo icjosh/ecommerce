@@ -1,4 +1,4 @@
-Given /^I have user with name "([^\"]*)" and password "([^\"]*)"$/ do |user, pwd|
+Given /^I create user with name "([^\"]*)" and password "([^\"]*)"$/ do |user, pwd|
   params = { }
   params[:username] = user
   params[:password] = pwd
