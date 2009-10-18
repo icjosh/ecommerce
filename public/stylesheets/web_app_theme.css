@@ -63,6 +63,23 @@ body {
     margin:10px;
 }
 
+.checkoutIcon {
+    background-image: url('/images/cart/cart_go.png');
+    background-repeat: no-repeat;
+    height: 18px;
+    text-align: center;
+    width: 18px;
+}
+
+.emptyCartIcon {
+    background-image: url('/images/cart/cart_delete.png');
+    background-repeat: no-repeat;
+    height: 18px;
+    text-align: center;
+    width: 18px;
+}
+
+
 #container {
     min-width: 960px;
 }

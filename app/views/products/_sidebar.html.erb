@@ -5,10 +5,14 @@
     <hr/>
     <br />
     <center>
-      <%=image_tag 'cart/cart_go.png', :align => 'top' %>
-      &nbsp; Checkout  &nbsp;
-      <%= image_tag 'cart/cart_delete.png', :align => 'top' %>
-      &nbsp; Empty Cart 
+      <button type="submit"
+	      dojoType="dijit.form.Button"
+	      iconClass="checkoutIcon"
+	      label="Checkout"></button>
+      <button type="submit"
+	      dojoType="dijit.form.Button"
+	      iconClass="emptyCartIcon"
+	      label="Empty Cart"></button>
     </center>
   </div>
 </div>
