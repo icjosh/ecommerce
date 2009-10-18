@@ -20,13 +20,19 @@ Feature: User Management
     Then I should see "Registration succesful."
     And I should see "Logged in as: testuser2"
 
-  Scenario: Login
-    When I follow "Login"
-    And I fill in "Username" with "testuser1"
-    And I fill in "Password" with "testpw1"
-    And I press "Sign in"
-    Then I should see "Logged in as: testuser1"
+    Scenario Outline: Login
+      When I follow "Login"
+      And I fill in the following:
+        | Username | <username> |
+	| Password | <password> |
+      And I press "Sign in"			
+      Then I should <action>
 
+      Examples:
+        | username   | password | action                                   |
+	| testuser1  | testpw1  | see "Logged in as: testuser1"            |
+	| testuser1  | testpw2  | see "Invalid login/password combination" |
+  
   Scenario: Logout
     Given I am logged in with user "testuser1" and password "testpw1"
     When I follow "Logout"
