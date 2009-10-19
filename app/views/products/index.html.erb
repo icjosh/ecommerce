@@ -1,3 +1,5 @@
+<script type="text/javascript" src="/javascripts/image_animation.js"></script>
+
 <div class="block">
   <div class="secondary-navigation">
     <ul>
@@ -9,58 +11,59 @@
   <div class="content">          
     <h2 class="title">All Products</h2>
     <div class="inner">
-      <table class="table">
-        <tr>             
-          <th class="first">Image</th>
-          <th>Title</th>
-          <th>Price</th>
-          <th colspan="2">Description</th>
-          <th class="last" style="text-align: right;">Actions</th>
-        </tr>
-
-        <% @products.each do |product| -%>
-        <tr class="<%= cycle("odd", "even") %>">
-          <td>
-            <div class="left">
-              <%= link_to("#{image_tag(product.image_url, :align => 'left',
-                :width => 80, :height => 80)}",
-              "#{product.image_url}") %>
-            </div>
-          </td>
-          <td>
-            <%= link_to product.title, product_path(product) %>
-          </td>
-          <td>
-            <%= number_to_currency(product.price) %>
-          </td>
-          <td colspan="2">
-            <%=h truncate(product.description, :length => 80) %>
-          </td>
-	  <td class="last">
-	    <button type="submit"
-		    dojoType="dijit.form.Button"
-		    iconClass="addToCartIcon"
-		    label="Add To Cart"></button>
-	    <br/>
-	    <br />
-   	    	    
-            <%= link_to 'show', product_path(product) %> |
-            <%= link_to 'edit', edit_product_path(product) %> |
-            <%= link_to 'destroy', product_path(product), :method => :delete, :confirm => 'Are you sure?' %>
-	  </td>
-        </tr>          
-        <% end -%>
+      <div id="product-list">
+        <table class="table">
+          <tr>             
+            <th class="first">Image</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th colspan="2">Description</th>
+            <th class="last" style="text-align: right;">Actions</th>
+          </tr>
+          <% @products.each do |product| -%>
+          <tr class="<%= cycle("odd", "even") %>">
+            <td>
+              <div class="left">
+                <%= link_to("#{image_tag(product.image_url, :align => 'left',
+                             :width => 80, :height => 80)}",
+                    "#{product.image_url}") %>
+              </div>
+            </td>
+            <td>
+              <%= link_to product.title, product_path(product) %>
+            </td>
+            <td>
+              <%= number_to_currency(product.price) %>
+            </td>
+            <td colspan="2">
+              <%=h truncate(product.description, :length => 80) %>
+            </td>
+	    <td class="last">
+	      <button type="submit"
+		      dojoType="dijit.form.Button"
+		      iconClass="addToCartIcon"
+		      label="Add To Cart"></button>
+	      <br/>
+	      <br />
+   	      
+              <%= link_to 'show', product_path(product) %> |
+              <%= link_to 'edit', edit_product_path(product) %> |
+              <%= link_to 'destroy', product_path(product), :method => :delete, :confirm => 'Are you sure?' %>
+	    </td>
+          </tr>          
+          <% end -%>
       </table>
+      </div>
       <div class="actions-bar">
         <div class="actions">
-      </div>
+        </div>
 
       <%= will_paginate @products %>
 
       <div class="clear"></div>
       </div>
+      </div>
     </div>
   </div>
-</div>
 
 <% content_for :sidebar, render(:partial => 'sidebar') -%>
