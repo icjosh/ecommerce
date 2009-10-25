@@ -2,6 +2,7 @@
   <h3><%= image_tag 'cart/cart.png', :align => 'top' %> &nbsp; Your Cart</h3>
   <div class="content">
     <br />
+    <% unless @cart.cart_items.empty? %>
     <div id="cart">
       <%= render :partial => 'cart/cart', :object => @cart %>
       <hr/>
@@ -29,6 +30,9 @@
            </tr>
       </table>
     </div>
+    <% else %>
+      <center>You have no items in your Cart yet!</center>
+    <% end %>
   </div>
 </div>
 <div class="block">
