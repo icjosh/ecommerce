@@ -6,16 +6,28 @@
       <%= render :partial => 'cart/cart', :object => @cart %>
       <hr/>
       <br />
-      <center>
-        <button type="submit"
-                dojoType="dijit.form.Button"
-                iconClass="checkoutIcon"
-                label="Checkout"></button>
-        <button type="submit"
-                dojoType="dijit.form.Button"
-                iconClass="emptyCartIcon"
-                label="Empty Cart"></button>
-      </center>
+      <table id="cart-actions">
+        <tr>
+          <td>
+            <%= button_to "Checkout", { },
+		:dojoType  => "dijit.form.Button",
+        	:iconClass => "checkoutIcon",
+        	:label     => "Checkout"
+            %>
+          </td>
+          <td>
+	      <%= button_to "Empty Cart",
+       		{
+    		  :action     => 'clear',
+    		  :controller => 'Cart'
+        	},
+       	        :dojoType  => "dijit.form.Button",
+                :iconClass => "emptyCartIcon",
+                :label     => "Empty Cart"
+               %>
+             </td>
+           </tr>
+      </table>
     </div>
   </div>
 </div>
