@@ -10,34 +10,31 @@
   <div class="content">
     <div class="inner">
       <p>
-        <a href="#">
-          <img alt="Add to Cart" src="/images/cart/cart_add.png" />
-          Add to Cart
-        </a>
+        <%= add_product_to_cart_button(@product) %>
       </p>
-        <p>
-          <b>Title:</b>
-          <%= @product.title %>
-        </p>
-
-        <p>
-          <b>Price:</b>
-          <%= number_to_currency(@product.price) %>
-        </p>
-
-        <p>
-          <b>Description:</b>
-          <%= @product.description %>
-        </p>
-
-        <p>
-          <b>Image:</b>
-          <%= @product.image_url %>
-          <p/>
-          <%= link_to("#{image_tag(
+      <p>
+        <b>Title:</b>
+        <%= @product.title %>
+      </p>
+      
+      <p>
+        <b>Price:</b>
+        <%= number_to_currency(@product.price) %>
+      </p>
+      
+      <p>
+        <b>Description:</b>
+        <%= @product.description %>
+      </p>
+      
+      <p>
+        <b>Image:</b>
+        <%= @product.image_url %>
+        <p/>
+        <%= link_to("#{image_tag(
             @product.image_url, :width => '192', :height => '192')}",
-          "#{@product.image_url}") %>
-        </p>
+            "#{@product.image_url}") %>
+        <p />
       <%= link_to 'Edit', edit_product_path(@product) %>
     </div>
   </div>

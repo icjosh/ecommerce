@@ -39,17 +39,7 @@
               <%=h truncate(product.description, :length => 80) %>
             </td>
 	    <td class="last">
-	      <%= button_to "Add to Cart",
-                {
-  			:controller 	=> 'Cart',
-                	:action 	=> 'add',
-                	:id 		=> product,
-  		},
-                :dojoType  => "dijit.form.Button",
-  		:iconClass => "addToCartIcon",
-  		:label     => "Add to Cart"
-  				
-              %>
+	      <%= add_product_to_cart_button(product) %>
 	      <br/>
 	         	      
               <%= link_to 'show', product_path(product) %> |
