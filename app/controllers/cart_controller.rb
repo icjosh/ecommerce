@@ -14,6 +14,11 @@ class CartController < ApplicationController
       end
     end
   end
+
+  def clear
+    @cart.clear
+    redirect_to_index
+  end
   
   def redirect_to_index(msg = nil)
     flash[:notice] = msg if msg
