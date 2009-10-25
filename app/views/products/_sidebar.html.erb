@@ -1,7 +1,12 @@
 <div class="block">
   <h3><%= image_tag 'cart/cart.png', :align => 'top' %> &nbsp; Your Cart</h3>
   <div class="content">
-    <p>This sidebar will hold the cart items, and will hide if empty.</p>
+    <br />
+    <% if @cart %>
+      <%= render :partial => 'cart/cart', :object => @cart %>
+    <% else %>
+      <center>You have no items in Cart</center>
+    <% end %>
     <hr/>
     <br />
     <center>
