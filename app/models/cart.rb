@@ -7,7 +7,7 @@ class Cart < ActiveRecord::Base
   # TODO: refactor the finders
   
   def add(product)
-    items = cart_items.find_all_by_product_id(product)
+    items = find_items(product)
     product = Product.find(product)
     if items.size < 1
       ci = cart_items.create(:product_id => product.id,
@@ -15,7 +15,17 @@ class Cart < ActiveRecord::Base
                              :price 	 => product.price)
     else
       ci = items.first
-      ci.update_attributes(:amount => ci.amount + 1)
+      increment_quantity(ci)
+    end
+    ci
+  end
+
+  def remove(product)
+    ci = find_items(product)
+    if ci.amount > 1
+      decrement_quantity(ci)
+    else
+      CartItem.destroy(ci.id)
     end
     ci
   end
@@ -24,9 +34,21 @@ class Cart < ActiveRecord::Base
     cart_items.inject(0) { |sum, n| n.price * n.amount + sum }
   end
 
-  def remove_from_cart(product)
-    # TODO: fix
-    # @items.delete_if { |item| item.product == product }
+  def clear
+    @cart.cart_items.destroy_all
+    redirect_to_index
   end
 
+  private
+  def find_items(product)
+    cart_items.find_all_by_product_id(product)
+  end
+
+  def increment_quantity(ci)
+    ci.update_attributes(:amount => ci.amount + 1)
+  end
+
+  def decrement_quantity(ci)
+    ci.update_attributes(:amount => ci.amount - 1)
+  end
 end
