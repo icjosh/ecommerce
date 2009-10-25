@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  before_filter :initialize_cart
+  
   private
 
   def current_user_session
@@ -20,6 +22,16 @@ class ApplicationController < ActionController::Base
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.record
+  end
+
+  def initialize_cart
+    if session[:cart_id]
+      @cart = Cart.find(session[:cart_id])
+    else
+      @cart = Cart.create
+      session[:cart_id] = @cart.id
+    end
+    
   end
 
 end
