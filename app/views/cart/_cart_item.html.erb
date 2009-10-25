@@ -1,10 +1,7 @@
-<% if cart_item == @current_item %>
-  <tr id="current_item">
-<% else %>
-  <tr><%= @current_item %>
-<% end %>
-  <td><%= cart_item.quantity %> &times;</td>
-  <td><%=h cart_item.title %></td>
-  <td class="item-price"><%= number_to_currency cart_item.price %></td>
-</tr>
+<li id="cart_item_<%= cart_item.product.id %>">
+  <%= link_to cart_item.product.title, :action => "show",
+	:controller => "products", :id => cart_item.product.id %>
+  - <%= pluralize(cart_item.amount, "pc", "pcs") %>      
+</li>
+
 
