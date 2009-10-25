@@ -6,16 +6,18 @@ Feature: Manage Cart
 
   Background:
     Given I have product titled The Lord of the Rings
-    And I am on the store page
+    And I am on the root page
 
   Scenario: Add product to Cart
-    When I press "Add to Cart"
+    When I follow "The Lord of the Rings"
+    And I press "Add to Cart"
     Then I should see "Cart"
     And I should have 1 item in Cart
     And I should have "The Lord of the Rings" in Cart
 
   Scenario: Empty Cart
-    When I press "Add to Cart"
+    When I follow "The Lord of the Rings"
+    And I press "Add to Cart"
     And I press "Empty Cart"
-    Then I should see "Your Cart is currently empty"
+    Then I should see "Your Cart is currently empty."
     And I should have 0 items in Cart
