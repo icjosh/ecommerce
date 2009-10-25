@@ -6,22 +6,27 @@ class Cart < ActiveRecord::Base
 
   # TODO: refactor the finders
   
-  def add_product(product)
-    current_item = @items.find { |item| item.product == product }
-    if current_item
-      current_item.increment_quantity
+  def add(product)
+    items = cart_items.find_all_by_product_id(product)
+    product = Product.find(product)
+    if items.size < 1
+      ci = cart_items.create(:product_id => product.id,
+                             :amount 	 => 1,
+                             :price 	 => product.price)
     else
-      @items << CartItem.new(product)
+      ci = items.first
+      ci.update_attributes(:amount => ci.amount + 1)
     end
-    current_item
-  end
-
-  def remove_from_cart(product)
-    @items.delete_if { |item| item.product == product }
+    ci
   end
 
   def total_price
-    @items.sum { |item| item.price }
+    cart_items.inject(0) { |sum, n| n.price * n.amount + sum }
+  end
+
+  def remove_from_cart(product)
+    # TODO: fix
+    # @items.delete_if { |item| item.product == product }
   end
 
 end

@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.paginate(:per_page => 10, :page => params[:page],
                                  :order => "updated_at DESC")
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @products }
