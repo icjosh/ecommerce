@@ -18,6 +18,7 @@ U.I.
 * Finish Dojo UI rewrite.
 * Add more user-friendly product display: search, sort, filter, etc.
 * Refactor form error display in views.
+* Add cart ajax functionality: drag and drop, highlight, etc.
 
 Test
 ====
