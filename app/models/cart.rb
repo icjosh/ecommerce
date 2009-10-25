@@ -1,12 +1,8 @@
-class Cart
+class Cart < ActiveRecord::Base
   has_many :cart_items
   has_many :products, :through => :cart_items
   
   attr_reader :items
-
-  def initialize
-    @items = []
-  end
 
   # TODO: refactor the finders
   
