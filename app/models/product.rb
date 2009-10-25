@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+  has_many :cart_items
+  has_many :carts, :through => :cart_items
+
   validates_uniqueness_of :title
   validates_presence_of :description
   validates_numericality_of :price, :greater_than => 0.01

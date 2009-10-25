@@ -1,4 +1,7 @@
 class Cart
+  has_many :cart_items
+  has_many :products, :through => :cart_items
+  
   attr_reader :items
 
   def initialize
