@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20091025000014) do
     t.integer  "product_id"
     t.integer  "cart_id"
     t.decimal  "price"
-    t.decimal  "amount"
+    t.integer  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
