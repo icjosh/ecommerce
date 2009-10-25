@@ -35,8 +35,7 @@ class Cart < ActiveRecord::Base
   end
 
   def clear
-    @cart.cart_items.destroy_all
-    redirect_to_index
+    cart_items.destroy_all
   end
 
   private
