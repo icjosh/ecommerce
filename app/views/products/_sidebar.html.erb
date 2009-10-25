@@ -2,23 +2,21 @@
   <h3><%= image_tag 'cart/cart.png', :align => 'top' %> &nbsp; Your Cart</h3>
   <div class="content">
     <br />
-    <% if @cart %>
+    <div id="cart">
       <%= render :partial => 'cart/cart', :object => @cart %>
-    <% else %>
-      <center>You have no items in Cart</center>
-    <% end %>
-    <hr/>
-    <br />
-    <center>
-      <button type="submit"
-	      dojoType="dijit.form.Button"
-	      iconClass="checkoutIcon"
-	      label="Checkout"></button>
-      <button type="submit"
-	      dojoType="dijit.form.Button"
-	      iconClass="emptyCartIcon"
-	      label="Empty Cart"></button>
-    </center>
+      <hr/>
+      <br />
+      <center>
+        <button type="submit"
+                dojoType="dijit.form.Button"
+                iconClass="checkoutIcon"
+                label="Checkout"></button>
+        <button type="submit"
+                dojoType="dijit.form.Button"
+                iconClass="emptyCartIcon"
+                label="Empty Cart"></button>
+      </center>
+    </div>
   </div>
 </div>
 <div class="block">
