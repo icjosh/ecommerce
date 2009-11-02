@@ -7,16 +7,17 @@
       <%= render :partial => 'cart/cart', :object => @cart %>
       <hr/>
       <br />
-      <table id="cart-actions">
-        <tr>
-          <td>
-            <%= button_to "Checkout", { },
+      <center>
+        <table id="cart-actions">
+          <tr>
+            <td>
+              <%= button_to "Checkout", { },
 		:dojoType  => "dijit.form.Button",
         	:iconClass => "checkoutIcon",
         	:label     => "Checkout"
-            %>
-          </td>
-          <td>
+              %>
+            </td>
+            <td>
 	      <%= button_to "Empty Cart",
        		{
     		  :action     => 'clear',
@@ -25,10 +26,11 @@
        	        :dojoType  => "dijit.form.Button",
                 :iconClass => "emptyCartIcon",
                 :label     => "Empty Cart"
-               %>
-             </td>
-           </tr>
-      </table>
+              %>
+            </td>
+          </tr>
+        </table>
+      </center>
     </div>
     <% else %>
       <center>Your Cart is currently empty.</center>
