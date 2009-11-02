@@ -1,7 +1,9 @@
 <ul>
   <%= render :partial => "cart/cart_item", :collection => @cart.cart_items %>
 </ul>
+
 <p id="cart-total">
+  <hr />
   <strong>Total:&nbsp;</strong>
   <%= number_to_currency cart.total_price %></td>
 </p>  
