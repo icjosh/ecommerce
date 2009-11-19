@@ -20,7 +20,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "authlogic", :lib => false, :version => ">=2.1.2"
-  config.gem "mislav-will_paginate", :lib => "will_paginate", :version => ">=2.3.11"
+  config.gem "will_paginate", :lib => "will_paginate", :version => ">=2.3.11"
   config.gem "activemerchant", :lib => "active_merchant", :version => ">=1.4.2"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
